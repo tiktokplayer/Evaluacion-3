@@ -1,0 +1,53 @@
+# def crear_post():
+#     title = input("Ingresa el título del post: ")
+#     body = input("Ingresa el contenido del post: ")
+#     user_id = input("Ingresa el ID del usuario: ")
+
+#     post_data = {
+#         "title": title,
+#         "body": body,
+#         "userId": user_id
+#     }
+
+#     api_url = "https://jsonplaceholder.typicode.com/posts"
+
+#     try:
+#         response = requests.post(api_url, json=post_data)
+
+#         if response.status_code in [200, 201]:  
+#             print("Post creado exitosamente.")
+#             print("Respuesta del servidor:", response.json())
+#         else:
+#             print(f"Error al crear el post. Código de estado: {response.status_code}")
+#             print("Detalles:", response.text)
+#     except requests.RequestException as e:
+#         print(f"Hubo un error al enviar la solicitud: {e}")
+
+# def crear_post():
+#     try:
+#         print("\nCreando nuevo post en la base de datos local (ID comenzará desde 101)")
+#         titulo = input("Ingrese el título del post: ")
+#         contenido = input("Ingrese el contenido del post: ")
+#         user_id = int(input("Ingrese el ID del usuario (1-10): "))
+        
+#         if not 1 <= user_id <= 10:
+#             print("Error: El ID de usuario debe estar entre 1 y 10")
+#             return None
+
+#         post = Post(
+#             id=None,  # El ID será asignado automáticamente desde 101
+#             title=titulo,
+#             body=contenido,
+#             userId=user_id
+#         )
+        
+#         db_id = db.insert_post(post)
+#         if db_id:
+#             post.id = db_id
+#             print(f"Post guardado exitosamente con ID {db_id}")
+#             return post
+#         return None
+        
+#     except ValueError:
+#         print("Error: El ID de usuario debe ser un número")
+#         return None
